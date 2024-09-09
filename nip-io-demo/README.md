@@ -25,3 +25,5 @@ kubectl apply -f ingress.yaml
 ```bash
 minikube tunnel
 ```
+
+Open in Browser: http://hello.127.0.0.1.nip.io
