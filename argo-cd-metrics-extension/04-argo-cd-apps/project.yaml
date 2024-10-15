@@ -1,0 +1,20 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: argo-cd-metrics-extension
+spec:
+  description: Project for deploying the Argo CD Metrics Extension stack
+  sourceRepos:
+    - https://github.com/christianhuth/minikube.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: "*"
+  orphanedResources:
+    warn: false
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"

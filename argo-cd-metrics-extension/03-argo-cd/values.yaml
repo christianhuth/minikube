@@ -1,0 +1,66 @@
+---
+argo-cd:
+  global:
+    domain: argocd.127.0.0.1.nip.io
+    image:
+      imagePullPolicy: Always
+    revisionHistoryLimit: 0
+  applicationSet:
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+  configs:
+    cm:
+      exec.enabled: true
+      extension.config: |
+        extensions:
+          - name: metrics
+            backend:
+              services:
+                - url: http://argo-cd-metrics-server.argo.svc:9003
+    params:
+      server.enable.proxy.extension: true
+      server.insecure: true
+    rbac:
+      policy.csv: |-
+        p, role:readonly, extensions, invoke, metrics, allow
+  controller:
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+  dex:
+    enabled: false
+  notifications:
+    enabled: false
+  redis:
+    enabled: true
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+  redisSecretInit:
+    enabled: false
+  repoServer:
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+  server:
+    extensions:
+      enabled: true
+      extensionList:
+        - name: extension-metrics
+          env:
+            - name: EXTENSION_URL
+              value: https://github.com/argoproj-labs/argocd-extension-metrics/releases/download/v1.0.3/extension.tar.gz
+            - name: EXTENSION_CHECKSUM_URL
+              value: https://github.com/argoproj-labs/argocd-extension-metrics/releases/download/v1.0.3/extension_checksums.txt
+    ingress:
+      enabled: true
+      tls: true
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
