@@ -21,9 +21,6 @@ spec:
           imagePullPolicy: IfNotPresent
           args:
             - '-enableTLS=false'
-          env:
-            - name: GIN_MODE
-              value: release
           name: argo-cd-metrics-server
           ports:
             - containerPort: 9003
