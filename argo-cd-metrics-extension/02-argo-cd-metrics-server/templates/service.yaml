@@ -5,6 +5,7 @@ metadata:
   labels:
     app: argo-cd-metrics-server
   name: argo-cd-metrics-server
+  namespace: argo
 spec:
   ports:
     - name: metrics

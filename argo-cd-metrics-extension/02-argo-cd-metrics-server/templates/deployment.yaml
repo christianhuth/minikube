@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: argo-cd-metrics-server
+  namespace: argo
 spec:
   revisionHistoryLimit: 0
   selector:
