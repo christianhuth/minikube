@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: argo-cd-metrics-server-configmap
+  name: argocd-metrics-server-configmap
   namespace: argo
 data:
   config.json: |
