@@ -9,14 +9,14 @@ metadata:
     meta.helm.sh/release-namespace: "{{ .Release.Namespace }}"
   labels:
     app.kubernetes.io/managed-by: Helm
-  name: argo-cd-metrics-server
+  name: argo-cd-apps
   namespace: argo
 spec:
   project: argo-cd-metrics-extension
   source:
     repoURL: https://github.com/christianhuth/minikube.git
     targetRevision: argo-cd-metrics-extension
-    path: argo-cd-metrics-extension/02-argo-cd-metrics-server
+    path: argo-cd-metrics-extension/04-argo-cd-apps
     helm:
       releaseName: argo-cd-metrics-server
       valueFiles:
