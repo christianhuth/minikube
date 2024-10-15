@@ -22,6 +22,9 @@ argo-cd:
     params:
       server.enable.proxy.extension: true
       server.insecure: true
+    rbac:
+      policy.csv: |-
+        p, role:readonly, extensions, invoke, metrics, allow
   controller:
     metrics:
       enabled: true
