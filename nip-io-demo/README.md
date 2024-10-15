@@ -3,13 +3,7 @@
 ## Create the Kubernetes cluster with minikube
 
 ```bash
-minikube start
-```
-
-## Enable the Ingress controller
-
-```bash
-minikube addons enable ingress
+minikube start --addons=ingress
 ```
 
 ## Deploy a demo application
