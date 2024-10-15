@@ -1,0 +1,32 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    helm.sh/hook: post-install
+    helm.sh/hook-weight: "-5"
+    meta.helm.sh/release-name: "{{ .Release.Name }}"
+    meta.helm.sh/release-namespace: "{{ .Release.Namespace }}"
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  name: argo-cd-metrics-server
+  namespace: argo
+spec:
+  project: argo-cd-metrics-extension
+  source:
+    repoURL: https://github.com/christianhuth/minikube.git
+    targetRevision: argo-cd-metrics-extension
+    path: argo-cd-metrics-extension/01-argo-cd-metrics-server
+    helm:
+      releaseName: argo-cd-metrics-server
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=true

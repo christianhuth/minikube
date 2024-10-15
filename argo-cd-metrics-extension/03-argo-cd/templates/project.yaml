@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  annotations:
+    helm.sh/hook: post-install
+    helm.sh/hook-weight: "-5"
+    meta.helm.sh/release-name: "{{ .Release.Name }}"
+    meta.helm.sh/release-namespace: "{{ .Release.Namespace }}"
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  name: argo-cd-metrics-extension
+spec:
+  description: Project for deploying the Argo CD Metrics Extension stack
+  sourceRepos:
+    - https://github.com/christianhuth/minikube.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: "*"
+  orphanedResources:
+    warn: false
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"

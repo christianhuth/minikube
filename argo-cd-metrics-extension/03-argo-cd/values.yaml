@@ -25,6 +25,12 @@ argo-cd:
   notifications:
     enabled: false
   redis:
+    enabled: true
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+  redisSecretInit:
     enabled: false
   repoServer:
     metrics:
