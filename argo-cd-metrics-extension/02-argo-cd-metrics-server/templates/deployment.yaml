@@ -4,6 +4,7 @@ kind: Deployment
 metadata:
   name: argo-cd-metrics-server
 spec:
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       app: argo-cd-metrics-server
