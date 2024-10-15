@@ -1,8 +1,0 @@
-backstage:
-  backstage:
-    revisionHistoryLimit: 0
-  ingress:
-    enabled: true
-    host: backstage.127.0.0.1.nip.io
-  serviceAccount:
-    create: true
