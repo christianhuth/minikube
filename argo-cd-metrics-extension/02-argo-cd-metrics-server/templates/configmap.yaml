@@ -27,7 +27,7 @@ data:
                       "description": "",
                       "graphType": "line",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_cpu_pie",
@@ -35,7 +35,7 @@ data:
                       "description": "",
                       "graphType": "pie",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_memory_line",
@@ -43,7 +43,7 @@ data:
                       "description": "",
                       "graphType": "line",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_memory_pie",
@@ -51,7 +51,7 @@ data:
                       "description": "",
                       "graphType": "pie",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (pod)"
                     }
                   ]
                 },
@@ -66,7 +66,7 @@ data:
                       "description": "",
                       "graphType": "line",
                       "metricName": "container",
-                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (container)"
+                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (container)"
                     },
                     {
                       "name": "container_cpu_pie",
@@ -74,7 +74,7 @@ data:
                       "description": "",
                       "graphType": "pie",
                       "metricName": "container",
-                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (container)"
+                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (container)"
                     },
                     {
                       "name": "container_memory_line",
@@ -82,7 +82,7 @@ data:
                       "description": "",
                       "graphType": "line",
                       "metricName": "container",
-                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (container)"
+                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (container)"
                     },
                     {
                       "name": "container_memory_pie",
@@ -90,7 +90,7 @@ data:
                       "description": "",
                       "graphType": "pie",
                       "metricName": "container",
-                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (container)"
+                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (container)"
                     }
                   ]
                 }
@@ -164,7 +164,7 @@ data:
                       "description": "",
                       "graphType": "line",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_cpu_pie",
@@ -172,7 +172,7 @@ data:
                       "description": "",
                       "graphType": "pie",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_memory_line",
@@ -180,7 +180,7 @@ data:
                       "description": "",
                       "graphType": "line",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_memory_pie",
@@ -188,7 +188,7 @@ data:
                       "description": "",
                       "graphType": "pie",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace==~\"{{.namespace}}\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", namespace=~\"{{.namespace}}\"}[5m])) by (pod)"
                     }
                   ]
                 }
