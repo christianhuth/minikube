@@ -13,6 +13,12 @@ argo-cd:
   configs:
     cm:
       exec.enabled: true
+      extension.config: |
+        extensions:
+          - name: metrics
+            backend:
+              services:
+                - url: argo-cd-metrics-server:9003
     params:
       server.enable.proxy.extension: true
       server.insecure: true
