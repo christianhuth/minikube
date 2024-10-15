@@ -2,24 +2,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: argocd-metrics-server
+  name: argo-cd-metrics-server
 spec:
   selector:
     matchLabels:
-      app: argocd-metrics-server
+      app: argo-cd-metrics-server
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: argocd-metrics-server
+        app: argo-cd-metrics-server
     spec:
       containers:
         - image: quay.io/argoprojlabs/argocd-extension-metrics:v1.0.3
           imagePullPolicy: IfNotPresent
           args:
             - '-enableTLS=false'
-          name: argocd-metrics-server
+          env:
+            - name: GIN_MODE
+              value: release
+          name: argo-cd-metrics-server
           ports:
             - containerPort: 9003
               name: metrics
@@ -35,4 +38,4 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: argocd-metrics-server-configmap
+            name: argo-cd-metrics-server-configmap
