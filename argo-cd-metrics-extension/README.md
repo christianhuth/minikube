@@ -26,6 +26,12 @@ This small demo project shows how to integrate Prometheus Metrics into the Argo 
 ./03-install-argo-cd.sh
 ```
 
+This step also outputs the login credentials for the Argo CD UI. If you have missed them you can run:
+
+```bash
+./03a-get-admin-password.sh
+```
+
 ## Create Argo CD Resources
 
 ```bash
@@ -34,4 +40,10 @@ This small demo project shows how to integrate Prometheus Metrics into the Argo 
 
 ## Access Argo CD UI
 
-Open https://argocd.127.0.0.1.nip.io in your Browser. When you click on any Pod or Deployment you should see the Metrics displayed.
+```bash
+minikube tunnel
+```
+
+Open https://argocd.127.0.0.1.nip.io in your Browser. When you click on any Pod or Deployment you should see the Metrics displayed:
+
+![Displaying Metrics in the Argo CD UI](image.png)

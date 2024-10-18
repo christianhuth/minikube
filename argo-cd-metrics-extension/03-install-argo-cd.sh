@@ -4,7 +4,7 @@ cd 03-argo-cd
 
 helm dependency update
 
-helm upgrade --install argo-cd --namespace argo --create-namespace -f values.yaml -- wait .
+helm upgrade --install argo-cd --namespace argo --create-namespace -f values.yaml --wait .
 
 cd ..
 
