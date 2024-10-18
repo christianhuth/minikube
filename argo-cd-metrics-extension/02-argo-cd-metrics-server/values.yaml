@@ -1,6 +1,0 @@
----
-argo-cd-metrics-extension:
-  prometheus:
-    namespace: monitoring
-    port: 9090
-    service: prometheus-operated

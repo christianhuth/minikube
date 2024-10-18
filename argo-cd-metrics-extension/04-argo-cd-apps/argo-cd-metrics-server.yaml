@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/christianhuth/minikube.git
     targetRevision: main
-    path: argo-cd-metrics-extension/02-argo-cd-metrics-server/templates
+    path: argo-cd-metrics-extension/02-argo-cd-metrics-server
   destination:
     server: https://kubernetes.default.svc
     namespace: argo
