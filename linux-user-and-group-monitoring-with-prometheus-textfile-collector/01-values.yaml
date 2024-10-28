@@ -8,6 +8,7 @@ prometheus:
       - secretName: prometheus-tls
         hosts:
           - prometheus.127.0.0.1.nip.io
+
 prometheus-node-exporter:
   extraArgs:
     # kube-prometheus-stack chart's default configuration
@@ -16,3 +17,13 @@ prometheus-node-exporter:
     # enable textfile collector
     - --collector.textfile
     - --collector.textfile.directory=/host/root/var/lib/prometheus-node-exporter/textfile-collector/metrics
+
+grafana:
+  ingress:
+    enabled: true
+    hosts:
+      - grafana.127.0.0.1.nip.io
+    tls:
+      - secretName: grafana-tls
+        hosts:
+          - grafana.127.0.0.1.nip.io
