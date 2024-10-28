@@ -1,4 +1,4 @@
-# Linux User Monitoring with Prometheus Textfile Collector
+# Linux User and Group Monitoring with Prometheus Textfile Collector
 
 This small demo project shows how to export information about Linux users and groups into Prometheus using the Textfile Collector and custom scripts.
 
