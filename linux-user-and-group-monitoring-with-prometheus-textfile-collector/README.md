@@ -33,3 +33,11 @@ minikube tunnel
 ```
 
 Open [https://prometheus.127.0.0.1.nip.io](https://prometheus.127.0.0.1.nip.io/graph?g0.expr=linux_user_info%7B%7D&g0.tab=1&g0.display_mode=lines&g0.show_exemplars=0&g0.range_input=1h) in your Browser and you should already see the new metrics `linux_user_info{}` and `linux_group_info{}`.
+
+## Access Grafana UI
+
+```bash
+minikube tunnel
+```
+
+Open [https://grafana.127.0.0.1.nip.io](https://grafana.127.0.0.1.nip.io) in your Browser.
