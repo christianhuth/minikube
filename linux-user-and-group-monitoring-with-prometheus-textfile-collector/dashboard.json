@@ -1,0 +1,704 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 32,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "11.2.2+security-01",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "linux_user_info{instance=~\"$instance\", username=~\"$username\", username!~\"$excluded_usernames\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Users",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value": true,
+              "__name__": true,
+              "container": true,
+              "endpoint": true,
+              "instance": true,
+              "job": true,
+              "namespace": true,
+              "pod": true,
+              "service": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Time": 5,
+              "Value": 14,
+              "__name__": 6,
+              "container": 7,
+              "endpoint": 8,
+              "gid": 4,
+              "home": 2,
+              "instance": 9,
+              "job": 10,
+              "namespace": 11,
+              "pod": 12,
+              "service": 13,
+              "shell": 3,
+              "uid": 0,
+              "username": 1
+            },
+            "renameByName": {
+              "Time": "",
+              "gid": "Primary Group",
+              "home": "Home Directory",
+              "shell": "Shell",
+              "uid": "User ID",
+              "username": "Username"
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "User ID"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 12
+      },
+      "id": 2,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "uid"
+          }
+        ]
+      },
+      "pluginVersion": "11.2.2+security-01",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "linux_group_info{instance=~\"$instance\", groupname=~\"$groupname\", groupname!~\"$excluded_groupnames\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Groups",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value": true,
+              "__name__": true,
+              "container": true,
+              "endpoint": true,
+              "instance": true,
+              "job": true,
+              "namespace": true,
+              "pod": true,
+              "service": true,
+              "users": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Time": 3,
+              "Value": 12,
+              "__name__": 4,
+              "container": 5,
+              "endpoint": 6,
+              "gid": 0,
+              "groupname": 1,
+              "instance": 7,
+              "job": 8,
+              "namespace": 9,
+              "pod": 10,
+              "service": 11,
+              "users": 2
+            },
+            "renameByName": {
+              "Time": "",
+              "gid": "Group ID",
+              "groupname": "Groupname",
+              "home": "Home Directory",
+              "shell": "Shell",
+              "uid": "UID",
+              "username": "Username",
+              "users": "Users"
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "Group ID"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "datasource": {
+        "default": true,
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
+            "inspect": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 3,
+      "options": {
+        "cellHeight": "sm",
+        "footer": {
+          "countRows": false,
+          "fields": "",
+          "reducer": [
+            "sum"
+          ],
+          "show": false
+        },
+        "showHeader": true,
+        "sortBy": [
+          {
+            "desc": false,
+            "displayName": "uid"
+          }
+        ]
+      },
+      "pluginVersion": "11.2.2+security-01",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "linux_group_membership{instance=~\"$instance\", groupname=~\"$groupname\", username=~\"$username\", username!~\"$exclude_usernames\", groupname!~\"$excluded_groupnames\"}",
+          "format": "table",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "__auto",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "title": "Group Membership",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value": true,
+              "__name__": true,
+              "container": true,
+              "endpoint": true,
+              "instance": true,
+              "job": true,
+              "namespace": true,
+              "pod": true,
+              "service": true,
+              "users": true
+            },
+            "includeByName": {},
+            "indexByName": {
+              "Time": 3,
+              "Value": 12,
+              "__name__": 4,
+              "container": 5,
+              "endpoint": 6,
+              "gid": 0,
+              "groupname": 1,
+              "instance": 7,
+              "job": 8,
+              "namespace": 9,
+              "pod": 10,
+              "service": 11,
+              "username": 2
+            },
+            "renameByName": {
+              "Time": "",
+              "gid": "Group ID",
+              "groupname": "Groupname",
+              "home": "Home Directory",
+              "shell": "Shell",
+              "uid": "UID",
+              "username": "Username",
+              "users": "Users"
+            }
+          }
+        },
+        {
+          "id": "sortBy",
+          "options": {
+            "fields": {},
+            "sort": [
+              {
+                "field": "Group ID"
+              }
+            ]
+          }
+        }
+      ],
+      "type": "table"
+    }
+  ],
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": "",
+        "current": {
+          "selected": false,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "definition": "label_values(linux_user_info,instance)",
+        "hide": 0,
+        "includeAll": true,
+        "multi": true,
+        "name": "instance",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(linux_user_info,instance)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus"
+        },
+        "definition": "label_values(linux_user_info{instance=~\"$instance\"},username)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Username",
+        "multi": true,
+        "name": "username",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(linux_user_info{instance=~\"$instance\"},username)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "definition": "label_values(linux_group_info{instance=~\"$instance\"},groupname)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Groupname",
+        "multi": true,
+        "name": "groupname",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(linux_group_info{instance=~\"$instance\"},groupname)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "_apt",
+            "_rpc",
+            "dnsmasq",
+            "games",
+            "gnats",
+            "irc",
+            "list",
+            "lp",
+            "mail",
+            "man",
+            "messagebus",
+            "news",
+            "proxy",
+            "statd",
+            "sync",
+            "sys",
+            "uucp"
+          ],
+          "value": [
+            "_apt",
+            "_rpc",
+            "dnsmasq",
+            "games",
+            "gnats",
+            "irc",
+            "list",
+            "lp",
+            "mail",
+            "man",
+            "messagebus",
+            "news",
+            "proxy",
+            "statd",
+            "sync",
+            "sys",
+            "uucp"
+          ]
+        },
+        "definition": "label_values(linux_user_info{instance=~\"$instance\"},username)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Excluded Usernames",
+        "multi": true,
+        "name": "excluded_usernames",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(linux_user_info{instance=~\"$instance\"},username)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "audio",
+            "backup",
+            "buildkit",
+            "cdrom",
+            "dialout",
+            "dip",
+            "disk",
+            "fax",
+            "floppy",
+            "games",
+            "gnats",
+            "input",
+            "irc",
+            "kmem",
+            "kvm",
+            "list",
+            "lp",
+            "mail",
+            "man",
+            "messagebus",
+            "news",
+            "operator",
+            "plugdev",
+            "proxy",
+            "render",
+            "root",
+            "sasl",
+            "shadow",
+            "src",
+            "staff",
+            "tape",
+            "tty",
+            "uucp",
+            "video",
+            "voice",
+            "utmp"
+          ],
+          "value": [
+            "audio",
+            "backup",
+            "buildkit",
+            "cdrom",
+            "dialout",
+            "dip",
+            "disk",
+            "fax",
+            "floppy",
+            "games",
+            "gnats",
+            "input",
+            "irc",
+            "kmem",
+            "kvm",
+            "list",
+            "lp",
+            "mail",
+            "man",
+            "messagebus",
+            "news",
+            "operator",
+            "plugdev",
+            "proxy",
+            "render",
+            "root",
+            "sasl",
+            "shadow",
+            "src",
+            "staff",
+            "tape",
+            "tty",
+            "uucp",
+            "video",
+            "voice",
+            "utmp"
+          ]
+        },
+        "definition": "label_values(linux_group_info{instance=~\"$instance\"},groupname)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Excluded Groupnames",
+        "multi": true,
+        "name": "excluded_groupnames",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(linux_group_info{instance=~\"$instance\"},groupname)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Linux User and Group Information",
+  "uid": "ce2wsihrkhtkwf",
+  "version": 25,
+  "weekStart": ""
+}
