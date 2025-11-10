@@ -1,0 +1,8 @@
+---
+apiVersion: v2
+name: kubevirt-manager
+version: 1.0.0
+dependencies:
+  - name: kubevirt-manager
+    repository: https://charts.christianhuth.de
+    version: 0.0.3

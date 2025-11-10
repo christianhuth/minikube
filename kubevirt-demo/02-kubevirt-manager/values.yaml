@@ -1,0 +1,9 @@
+---
+kubevirt-manager:
+  ingress:
+    enabled: true
+    hosts:
+      - host: kubevirt.127.0.0.1.nip.io
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
